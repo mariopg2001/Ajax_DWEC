@@ -1,0 +1,21 @@
+<div *ngIf="mensajeServicio.mensajes.length">
+    <div *ngFor="let mensaje of mensajeServicio.mensajes">
+
+      <div *ngIf="mensaje.tipo=='exito'" class="divExito">
+        <b>{{mensaje.titulo}}:</b> {{mensaje.descripcion}}
+      </div>
+
+      <div *ngIf="mensaje.tipo=='error'" class="divError">
+        <b>{{mensaje.titulo}}:</b> {{mensaje.descripcion}}
+      </div>
+
+      <div *ngIf="mensaje.tipo=='aviso'" class="divAviso">
+        <b>{{mensaje.titulo}}:</b> {{mensaje.descripcion}}
+      </div>
+
+      <div *ngIf="mensaje.tipo=='info'" class="divInfo">
+        <b>{{mensaje.titulo}}:</b> {{mensaje.descripcion}}
+      </div>
+
+    </div>
+</div>

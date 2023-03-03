@@ -1,0 +1,34 @@
+<h1>Buscador de películas</h1>
+
+
+<input type="text" name="buscador" id="buscador" placeholder="Buscar peliculas...">
+<button type="button" (click)="listado()">Buscar</button>
+<button type="button" (click)="limpiar()">Limpiar mensajes</button>
+
+<app-mensajes></app-mensajes>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Descripcion</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let peli of peliculas.results">
+        <td><img src={{peli.image}} alt="" width="128px"></td>
+        <td>{{peli.title}}</td>
+        <td>{{peli.resultType}}</td>
+        <td>{{peli.description}}</td>
+        <td>
+          <button type="button" (click)="favorita(peli)">Favorita ⭐</button>
+          <button type="button" (click)="verActores(peli)">Actores</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
